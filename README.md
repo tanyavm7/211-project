@@ -1,1 +1,1 @@
-# 211-project
+# 211-project by Tanya Li, Sean Reth, and Alexandria Sampalis
