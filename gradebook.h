@@ -8,9 +8,13 @@
 
 class gradebook {
 private:
-    std::vector<int> grades;
+    std::vector<int> assignments;
+    std::vector<int> labs;
     std::vector<int> category;
-    std::vector<int> TotGrades;
+    std::vector<int> TotCategoryGrades;
+    float proj1;
+    float proj2;
+    float final;
 
 public:
     gradebook();
@@ -18,11 +22,12 @@ public:
     void infile(std::string fname);
     void outfile(std::string fname);
     float TotalGrade();
-
-
+    void printGrade(int num,std::string category );
+    float getTotCategoryGrade(std::string category);
+    float changeGrade();
+    void printCatGrade(std::string category);
 
 };
 
 
 #endif //GRADEBOOKPROJECT_GRADEBOOK_H
-
