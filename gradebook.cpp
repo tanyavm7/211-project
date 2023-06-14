@@ -18,13 +18,13 @@ void gradebook::infile(std::string fname){
 
     //read through each line in file
 
-    //parse through file to collect data and fill vectors
+    //parse through file to collect data and fill vectors/variables
 
     //close file
     file.close();
 }
 
-//rewrite in the gradebook into the file with any changes
+//rewrite the gradebook into the file with any changes
 void gradebook::outfile(std::string fname){
     //open file to write
     std::fstream file;
@@ -35,10 +35,37 @@ void gradebook::outfile(std::string fname){
     file.close();
 }
 
-//get the total grade
+//get the total grade of the course
 float gradebook::TotalGrade() {
     float totalgrade;
 
     return totalgrade;
 }
+
+//print out a single grade
+void gradebook::printGrade(int num, std::string category) {
+
+}
+
+//print out all grades from a category
+void gradebook::printCatGrade(std::string category) {
+
+}
+
+//return the total grade of a certain category
+float gradebook::getTotCategoryGrade(std::string category) {
+
+}
+
+//change a grade within the gradebook
+float gradebook::changeGrade() {
+
+}
+
+
+
+
+
+
+
 
