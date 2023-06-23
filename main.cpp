@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     //get the total grade that the student currently has
     int input;
     std::cout<<"Welcome to your grade book. "<<std::endl;
-    while(input != "5")
+    while(input != 5)
     {
         std::cout << "If you want to know your final grade in the class, please input 1." << std::endl;
         std::cout << "If you want to know a single grade in a specific category and assignment, please input 2." << std::endl;
