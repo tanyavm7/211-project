@@ -24,7 +24,7 @@ public:
     float TotalGrade();
     void printGrade(int num,std::string category );
     float getTotCategoryGrade(std::string category);
-    float changeGrade();
+    float changeGrade(std::string categoryW, int num, float newGrade);
     void printCatGrade(std::string category);
 
 };
