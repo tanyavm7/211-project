@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Please input the number of category. For example, if you want to search lab 3, then input 3."
                       << std::endl;
             std::cin >> num;
-            std::cout << "Please input the grade you want to change. For example, 25."
+            std::cout << "Please input the grade you want to change. For example, 25.";
             std::cin >> newGrade;
 
             gradebook.changeGrade(category, num, newGrade);
