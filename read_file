@@ -1,0 +1,39 @@
+//code to go through and read files line by line and seperate them into categories
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <string>
+
+
+int main()
+{
+    std::string fileName = "input.txt";//change to have us cin text name
+    std::ifstream inputFile(fileName);
+
+    if (!inputFile)
+    {
+        std::cout<<"incorrect file, try again."<<std::endl;
+        return 1;
+    }
+
+    std::vector<std::string> assignments, labs, projects, final;
+
+    std::string line[];
+    int lineCount = 1;
+
+    while (std::getline(file,line))
+    {
+        while (std::getline(file, line)) {
+            if (lineCount >= 2 && lineCount <= 5)
+                assignments.push_back(line);
+            else if (lineCount >= 7 && lineCount <= 14)
+                labs.push_back(line);
+            else if (lineCount >= 16 && lineCount <= 17)
+                projects.push_back(line);
+            else if (lineCount == 19)
+                final.push_back(line);
+
+            lineCount++;
+    }
+
