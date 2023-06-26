@@ -1,6 +1,8 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
+#include <string>
 
 #include "gradebook.h"
 
@@ -8,7 +10,7 @@ int main(int argc, char* argv[]) {
     //create object Gradebook
     gradebook gradebook;
 
-    //CLA collects file name
+    //takes the file name entered in the CLA
     std::string fname = argv[1];
 
     //read through the Gradebook text file
@@ -18,31 +20,20 @@ int main(int argc, char* argv[]) {
     int input;
     std::cout<<"Welcome to your grade book. "<<std::endl;
     //used to initialize loop by gaining input for variable "input"
-    std::cout << "If you want to know your final grade in the class, please input 1." << std::endl;
-    std::cout << "If you want to know a single grade in a specific category and assignment, please input 2." << std::endl;
-    std::cout << "If you want to know your grades in a specific category, please input 3." << std::endl;
-    std::cout << "If you want to change a grade in your grade book, please input 4." << std::endl;
-    std::cout << "If you want all grades for a category, please input 5." << std::endl;
-    std::cout << "If you want all the grades, please input 6." << std::endl;
-    std::cout << "If you finish with the grade book, please input 7." << std::endl;
+    std::cout << "If you want to know your current grade in the class, input 1." << std::endl;
+    std::cout << "If you want to find a certain grade in a specific category and assignment, input 2." << std::endl;
+    std::cout << "If you want to know your total grade in a specific category, input 3." << std::endl;
+    std::cout << "If you want to change a grade in your grade book, input 4." << std::endl;
+    std::cout << "If you want to see all your grades in a specific category, input 5." << std::endl;
+    std::cout << "If you want all the grades, input 6." << std::endl;
+    std::cout << "If you finish with the grade book, input 7." << std::endl;
 
     std::cin >> input;
     while(input != 7)
     {
-        std::cout << "If you want to know your final grade in the class, please input 1." << std::endl;
-        std::cout << "If you want to know a single grade in a specific category and assignment, please input 2." << std::endl;
-        std::cout << "If you want to know your grades in a specific category, please input 3." << std::endl;
-        std::cout << "If you want to change a grade in your grade book, please input 4." << std::endl;
-        std::cout << "If you want all grades for a category, please input 5." << std::endl;
-        std::cout << "If you want all the grades, please input 6." << std::endl;
-        std::cout << "If you finish with the grade book, please input 7." << std::endl;
-
-        std::cin >> input;
-
         if(input == 1) // get final grade
         {
-            std::cout << "Your final grade is..." << std::endl;
-            std::cout << gradebook.TotalGrade() << std::endl;
+            gradebook.TotalGrade();
         }
         else if(input == 2) // get a specific grade
         {
@@ -109,10 +100,19 @@ int main(int argc, char* argv[]) {
             std::cout << "Looks like you input the wrong number, please try again." << std::endl;
         }
 
+        std::cout << "If you want to know your final grade in the class, please input 1." << std::endl;
+        std::cout << "If you want to know a single grade in a specific category and assignment, please input 2." << std::endl;
+        std::cout << "If you want to know your grades in a specific category, please input 3." << std::endl;
+        std::cout << "If you want to change a grade in your grade book, please input 4." << std::endl;
+        std::cout << "If you want all grades for a category, please input 5." << std::endl;
+        std::cout << "If you want all the grades, please input 6." << std::endl;
+        std::cout << "If you finish with the grade book, please input 7." << std::endl;
+
+        std::cin >> input;
+
     }
 
     //update Gradebook
     gradebook.outfile(fname);
 
     return 0;
-}
