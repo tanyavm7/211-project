@@ -81,9 +81,13 @@ If you are still confused on how to set up this template, make sure to check out
 ## Runtime Instructions
 Once you have all the necessary files you can run your program!
 start by compiling in your IDE using the following command line arguments.
-`g++ main.cpp gradebook.cpp -o prog'
+```
+g++ main.cpp gradebook.cpp -o prog
+```
 then to call the code and run it with your text file write...
-`./prog grades_text_file.txt`
+```
+./prog grades_text_file.txt
+```
 you will then be prompted with the following text
 ```
 "If you want to know your current grade in the class, input 1."
