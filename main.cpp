@@ -62,10 +62,10 @@ int main(int argc, char* argv[]) {
             std::string newGrade;
             std::cout << "Please input the category. For example, labs, assignments, projects." << std::endl;
             std::cin >> category;
-            std::cout << "Please input the number of category. For example, if you want to search lab 3, then input 3."
+            std::cout << "Please input the assignment number you would like to change. For example, if you want to search lab 3, then input 3."
                       << std::endl;
             std::cin >> num;
-            std::cout << "Please input the grade you want to change. For example, 25.";
+            std::cout << "Please input the grade you want to change. For example, 25."<< std::endl;
             std::cin >> newGrade;
 
             gradebook.changeGrade(category, num, newGrade);
@@ -89,10 +89,7 @@ int main(int argc, char* argv[]) {
             std::string category4 = "final";
             gradebook.printCatGrade(category4);
         }
-        else if(input == 7)
-        {
-            std::cout << "Thank you for using the grade book." << std::endl;
-        }
+        
         else
         {
             std::cout << "Looks like you input the wrong number, please try again." << std::endl;
@@ -109,7 +106,9 @@ int main(int argc, char* argv[]) {
         std::cin >> input;
 
     }
-
+    
+    std::cout << "Thank you for using the grade book." << std::endl;
+    
     //update Gradebook
     gradebook.outfile(fname);
 
