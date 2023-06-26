@@ -53,12 +53,36 @@ void gradebook::infile(std::string fname){
 
 //rewrite the gradebook into the file with any changes
 void gradebook::outfile(std::string fname){
-    //open file to write
-    std::fstream file;
-    file.open(fname, std::ios::out);
 
-    //close file
-    file.close();
+    //open file to write
+    std::ofstream file (fname);
+
+    //while file is open, write
+    if (file.is_open())
+    {
+        //Writes title of category, followed by the assignments in that category
+        file << "Assignments\n";
+        for(int i=0;i<4;i++) {
+
+            file << assignments[i]<< "\n";
+        }
+        file << "Labs\n";
+        for(int i=0;i<8;i++) {
+
+            file << labs[i]<< "\n";
+        }
+        file << "Projects\n";
+        for(int i=0;i<2;i++) {
+
+            file << projects[i]<< "\n";
+        }
+        file << "Final\n";
+
+        file << final[0]<< "\n";
+
+        file.close();
+    }
+    else std::cout << "Unable to open file";
 }
 
 //function that calculates and returns the final total grade of the course
