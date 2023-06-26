@@ -60,11 +60,33 @@ int main(int argc, char* argv[]) {
             std::string category;
             int num;
             std::string newGrade;
-            std::cout << "Please input the category. For example, labs, assignments, projects." << std::endl;
+            std::cout << "Please input the category. For example, labs, assignments, projects, and final." << std::endl;
             std::cin >> category;
-            std::cout << "Please input the assignment number you would like to change. For example, if you want to search lab 3, then input 3."
+            std::cout << "Please input the assignment number you would like to change. For example, if you want to search lab 3, then input 3. If changing the final, just input '1'"
                       << std::endl;
             std::cin >> num;
+            if (category=="assignments"){
+                if (num>4||num<1){
+                    std::cout<<"Not a valid input, please try again using a number between 1 and 4" << std::endl;
+                    std::cin>>num;
+                }
+            }
+            if (category=="labs"){
+                if (num>8||num<1){
+                    std::cout<<"Not a valid input, please try again using a number between 1 and 8" << std::endl;
+                    std::cin>>num;
+                }
+            }
+            if (category=="projects"){
+                if (num>2||num<1){
+                    std::cout<<"Not a valid input, please try again using a number between 1 and 2" << std::endl;
+                    std::cin>>num;
+                }
+            }
+            if (category=="final"){
+                num=1;
+            }
+
             std::cout << "Please input the grade you want to change. For example, 25."<< std::endl;
             std::cin >> newGrade;
 
@@ -89,7 +111,7 @@ int main(int argc, char* argv[]) {
             std::string category4 = "final";
             gradebook.printCatGrade(category4);
         }
-        
+
         else
         {
             std::cout << "Looks like you input the wrong number, please try again." << std::endl;
@@ -106,9 +128,9 @@ int main(int argc, char* argv[]) {
         std::cin >> input;
 
     }
-    
+
     std::cout << "Thank you for using the grade book." << std::endl;
-    
+
     //update Gradebook
     gradebook.outfile(fname);
 
