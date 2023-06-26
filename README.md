@@ -19,10 +19,6 @@ the following figure will show you what questions to expect when the gradebook i
 
 ```
 
-
-## Planning
-### Pseudocode / Flowcharts
-
 ## Compilation Instructions
 This project was developed using the IDE cLion, so we suggest using that in version 11 for the best experience!
 You will need to start by copying the ***main.cpp***, ***gradebook.cpp***, and ***gradebook.h*** files from our repository.You will then need to create a text file using our template below to input the grades you know!
@@ -103,6 +99,14 @@ you will then be given the option to input a number and depending on which optio
 ### Video
 If you need any more help with compilation or running the program visit the link to a video showcasing our code!
 (youtube link here)
+
+
+## Planning
+### Pseudocode 
+the following block contains some pseudo code that explains what is happening when the `main.cpp` is run
+```
+
+```
 
 ## Sample Inputs & Outputs
 
