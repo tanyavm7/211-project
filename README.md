@@ -5,12 +5,12 @@
 
 ### Project Structure:
 
+## Planning
+### Pseudocode / Flowcharts
+
 ## Compilation Instructions
 
 ### Input File Template
-
-## Planning
-### Pseudocode / Flowcharts
 
 ## Runtime Instructions
 
