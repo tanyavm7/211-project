@@ -1,3 +1,4 @@
+
 #include <vector>
 #include <iostream>
 #include <iomanip>
@@ -12,16 +13,43 @@ gradebook::gradebook(){
 
 //parse file and fill each of the respective vectors
 void gradebook::infile(std::string fname){
+
     //open file to read
-    std::fstream file;
-    file.open(fname, std::ios::in);
+    std::ifstream infile(fname);
+
+    //if the incorrect file name is entered it fails
+    if (!infile) {
+        std::cout << "Failed to open file: " << fname << "\n";
+        //terminates code
+        throw std::runtime_error("Terminating the code.");
+    }
 
     //read through each line in file
+    //collect data and fill vectors/variables
 
-    //parse through file to collect data and fill vectors/variables
+    std::string line;
+    int lineNumber = 1;
+    while (std::getline(infile, line)) {
+        if (lineNumber >= 2 && lineNumber <= 5) {
+            assignments.push_back(line);
+        }
+        else if (lineNumber >= 7 && lineNumber <= 14) {
+            labs.push_back(line);
+        }
+        else if (lineNumber == 16) {
+            proj1 = stof(line);
+        }
+        else if (lineNumber == 17) {
+            proj2 = stof(line);
+        }
+        else if (lineNumber == 19){
+            final=stof(line);
+        }
+        lineNumber++;
+    }
 
     //close file
-    file.close();
+    infile.close();
 }
 
 //rewrite the gradebook into the file with any changes
@@ -34,11 +62,10 @@ void gradebook::outfile(std::string fname){
     file.close();
 }
 
-//get the total grade of the course
-float gradebook::TotalGrade() {
+//function that calculates and returns the final total grade of the course
+void gradebook::TotalGrade() {
     float totalgrade=0;
     std::string str;
-
     //add all assignment grades to totalgrade
     for (int i=0;i<4;i++) {
         //create temp string to convert into float
@@ -71,8 +98,13 @@ float gradebook::TotalGrade() {
     //add final exam to totalgrade
     totalgrade+=final;
 
+
+    totalgrade = totalgrade/1000;
+    totalgrade = totalgrade * 100;
+
+
     //totalgrade out of 1000 for final grade
-    return totalgrade/1000;
+    std::cout << "Your final grade is: "<<totalgrade<<"%"<<std::endl;
 }
 
 //print out a single grade
@@ -84,13 +116,13 @@ void gradebook::printGrade(int num, std::string categoryW) {
         std::cout<<assignments[num-1]<<"/50"<<std::endl;
     }
 
-    //print out lab grade
+        //print out lab grade
     else if (categoryW=="labs"){
         //num-1 in order to take correct index
         std::cout<< labs[num-1]<<std::endl;
     }
 
-    //print project grade
+        //print project grade
     else if (categoryW=="projects"){
 
         //decide which project user wants and prints it
@@ -102,7 +134,7 @@ void gradebook::printGrade(int num, std::string categoryW) {
         }
     }
 
-    //print out final exam grade
+        //print out final exam grade
     else if (categoryW=="final"){
         std::cout<<final<<std::endl;
     }
@@ -132,7 +164,7 @@ void gradebook::printCatGrade(std::string categoryW) {
     else if (categoryW =="projects"){
         //print project 1 and 2 grade
         std::cout<<"Project 1 grade is: " << proj1 << "/150" << "\nProject 2 grade is: "<< proj2 << "/350" <<std::endl;
-            }
+    }
 
     else if (categoryW == "final"){
         //print final exam grade
@@ -169,7 +201,7 @@ void gradebook::getTotCategoryGrade(std::string categoryW) {
         //print total assignment grade
         std::cout<< total1<<std::endl;
     }
-    //find lab grade
+        //find lab grade
     else if (categoryW == "labs"){
         for (int i=0;i<8;i++) {
             //create temp string to convert into float
@@ -186,11 +218,11 @@ void gradebook::getTotCategoryGrade(std::string categoryW) {
         //prints total lab grade
         std::cout<< total2<<std::endl;
     }
-    //print projects grade
+        //print projects grade
     else if (categoryW == "projects"){
         std::cout<<proj1+proj2<<"/500"<<std::endl;
     }
-    //print final exam grade
+        //print final exam grade
     else if (categoryW == "final"){
         std::cout<<final<<std::endl;
     }
@@ -228,4 +260,3 @@ void gradebook::changeGrade(std::string categoryW, int num, std::string newGrade
     else{
         std::cout<<"Not a valid category"<<std::endl;
     }
-}
