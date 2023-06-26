@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
         else if(input == 3) // get a specific category grade
         {
             std::string category;
-            std::cout << "Please input the category. For example, labs, assignments, project1, project2, final." << std::endl;
+            std::cout << "Please input the category. For example, labs, assignments, projects, final." << std::endl;
             std::cin >> category;
             std::cout << "Your grade for " << category << " is..." <<std::endl;
 
@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
         else if(input == 5)
         {
             std::string category;
-            std::cout << "Please input the category. For example, labs, assignments, project1, project2, final." << std::endl;
+            std::cout << "Please input the category. For example, labs, assignments, projects, final." << std::endl;
             std::cin >> category;
 
             gradebook.printCatGrade(category);
@@ -82,14 +82,12 @@ int main(int argc, char* argv[]) {
         {
             std::string category1 = "labs";
             gradebook.printCatGrade(category1);
-            std::string category2 = "assignment";
+            std::string category2 = "assignments";
             gradebook.printCatGrade(category2);
-            std::string category3 = "project1";
+            std::string category3 = "projects";
             gradebook.printCatGrade(category3);
-            std::string category4 = "project2";
+            std::string category4 = "final";
             gradebook.printCatGrade(category4);
-            std::string category5 = "final";
-            gradebook.printCatGrade(category5);
         }
         else if(input == 7)
         {
@@ -116,4 +114,4 @@ int main(int argc, char* argv[]) {
     gradebook.outfile(fname);
 
     return 0;
-} 
+}
