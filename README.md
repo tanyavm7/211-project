@@ -109,6 +109,9 @@ the following block contains some pseudo code that explains what is happening wh
 ```
 
 ## Sample Inputs & Outputs
+<img width="799" alt="Screen Shot 2023-06-26 at 7 45 26 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/c43a3b90-c772-489f-a089-a6877a126a82">
+
+the picture above is an example of a starting .txt file, the g++ compilation lines in the command line, and what the gradebook outputs
 
 ### Credits:
 **Project created by Tanya Li, Sean Reth, and Alexandria Sampalis.** <br />
