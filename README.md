@@ -25,6 +25,8 @@ the following figure will show you what questions to expect when the gradebook i
 
 ## Compilation Instructions
 This project was developed using the IDE cLion, so we suggest using that in version 11 for the best experience!
+You will need to start by copying the ***main.cpp***, ***gradebook.cpp***, and ***gradebook.h*** files from our repository.You will then need to create a text file using our template below to input the grades you know!
+after you have all these copied into your prefered IDE you can begin runing the program.
 
 ### Input File Template
 
@@ -77,6 +79,26 @@ If you are still confused on how to set up this template, make sure to check out
 
 
 ## Runtime Instructions
+Once you have all the necessary files you can run your program!
+start by compiling in your IDE using the following command line arguments.
+`g++ main.cpp gradebook.cpp -o prog'
+then to call the code and run it with your text file write...
+`./prog grades_text_file.txt`
+you will then be prompted with the following text
+```
+"If you want to know your current grade in the class, input 1."
+"If you want to find a certain grade in a specific category and assignment, input 2." 
+"If you want to know your total grade in a specific category, input 3."
+"If you want to change a grade in your grade book, input 4."
+"If you want to see all your grades in a specific category, input 5."
+"If you want all the grades, input 6."
+"If you finish with the grade book, input 7."
+```
+you will then be given the option to input a number and depending on which option you choose it might require a few more pieces of information, but eveythibng is explained while you run the code to minimize any confusion!
+
+### Video
+If you need any more help with compilation or running the program visit the link to a video showcasing our code!
+~~~youtube link here~~~
 
 ## Sample Inputs & Outputs
 
