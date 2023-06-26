@@ -2,22 +2,29 @@
 
 ## Summary
 ### Project Description:
-This project allows you to keep track of your grade in URI's CSC 212 class! Not only does it allow you to see what your current grade is in the course, but you can ask it to return specific assigment grades, total grades of a certain category (labs, assignments, ect), prints out all grades in a certain category, and prints out all of your grades int the class. You can also directly change your grade file from this program. This is all done by following very simple accessible instructions within your IDE.
+This `gradebook project` allows you to keep track of your grade in `URI's CSC 212` class! Not only does it allow you to see what your current grade is in the course, but you can ask it to return specific assigment grades, total grades of a certain category (labs, assignments, ect), prints out all grades in a certain category, and prints out all of your grades int the class. You can also directly change your grade file from this program. This is all done by following very simple accessible instructions within your IDE.
 
 ### Project Structure:
-This project is broken up into 3 sections, a main.cpp that makes the project interactive, the gradebook.cpp that stores all the functions to make the program run, and lastly the gradebook.h that stores all function declarations. 
+This project is broken up into 3 sections, a ***main.cpp*** that makes the project interactive, the ***gradebook.cpp*** that stores all the functions to make the program run, and lastly the ***gradebook.h*** that stores all function declarations. 
 Of course you will also need your starter txt file (a template for this can be found below).
-the following figure will show you what to expect when the gradebook is up and running.
+the following figure will show you what questions to expect when the gradebook is up and running.
 ```
+"If you want to know your current grade in the class, input 1."
+"If you want to find a certain grade in a specific category and assignment, input 2." 
+"If you want to know your total grade in a specific category, input 3."
+"If you want to change a grade in your grade book, input 4."
+"If you want to see all your grades in a specific category, input 5."
+"If you want all the grades, input 6."
+"If you finish with the grade book, input 7."
 
 ```
-
 
 
 ## Planning
 ### Pseudocode / Flowcharts
 
 ## Compilation Instructions
+This project was developed using the IDE cLion, so we suggest using that in version 11 for the best experience!
 
 ### Input File Template
 
@@ -66,6 +73,7 @@ project 2 grade /350
 Final
 final exam grade /100
 ```
+If you are still confused on how to set up this template, make sure to check out the example txt files we have included in our repository.
 
 
 ## Runtime Instructions
