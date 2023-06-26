@@ -36,15 +36,14 @@ void gradebook::infile(std::string fname){
         else if (lineNumber >= 7 && lineNumber <= 14) {
             labs.push_back(line);
         }
-        else if (lineNumber == 16) {
-            proj1 = stof(line);
+        else if (lineNumber >= 16 && lineNumber <= 17) {
+            projects.push_back(line);
         }
-        else if (lineNumber == 17) {
-            proj2 = stof(line);
+        else if(lineNumber == 19)
+        {
+            final.push_back(line);
         }
-        else if (lineNumber == 19){
-            final=stof(line);
-        }
+
         lineNumber++;
     }
 
@@ -69,10 +68,10 @@ void gradebook::TotalGrade() {
     //add all assignment grades to totalgrade
     for (int i=0;i<4;i++) {
         //create temp string to convert into float
-        str=(assignments[i]);
+        //str=(assignments[i]);
         //if grade not empty, add it to calculation
-        if (str!="E") {
-            totalgrade += std::stoi(str);
+        if (assignments[i]!="E") {
+            totalgrade += std::stof(assignments[i]);
         }
         else{
             continue;
@@ -82,10 +81,10 @@ void gradebook::TotalGrade() {
     //add all lab grades to totalgrade
     for (int i=0;i<8;i++) {
         //create temp string to convert into float
-        str=(labs[i]);
+        //str=(labs[i]);
         //if grade not empty, add it to calculation
-        if (str!="E") {
-            totalgrade += std::stoi(str);
+        if (labs[i]!="E") {
+            totalgrade += std::stof(labs[i]);
         }
         else{
             continue;
@@ -93,18 +92,30 @@ void gradebook::TotalGrade() {
     }
 
     //add project grades to totalgrade
-    totalgrade+=proj1+proj2;
+    for (int i=0;i<projects.size();i++) {
+        //create temp string to convert into float
+        //str=(labs[i]);
+        //if grade not empty, add it to calculation
+        if (projects[i]!="E") {
+            totalgrade += std::stof(projects[i]);
+        }
+        else{
+            continue;
+        }
+    }
+
+    //totalgrade+=std::stof(projects[0])+std::stof(projects[1]);
 
     //add final exam to totalgrade
-    totalgrade+=final;
+    if(final[0]!="E")
+    {
+        totalgrade+=std::stof(final[0]);
+    }
 
-
-    totalgrade = totalgrade/1000;
-    totalgrade = totalgrade * 100;
 
 
     //totalgrade out of 1000 for final grade
-    std::cout << "Your final grade is: "<<totalgrade<<"%"<<std::endl;
+    std::cout << "Your final grade is: "<<totalgrade<<"/1000"<<std::endl;
 }
 
 //print out a single grade
@@ -119,7 +130,7 @@ void gradebook::printGrade(int num, std::string categoryW) {
         //print out lab grade
     else if (categoryW=="labs"){
         //num-1 in order to take correct index
-        std::cout<< labs[num-1]<<std::endl;
+        std::cout<< labs[num-1]<<"/25"<<std::endl;
     }
 
         //print project grade
@@ -127,16 +138,16 @@ void gradebook::printGrade(int num, std::string categoryW) {
 
         //decide which project user wants and prints it
         if (num==1){
-            std::cout<<proj1<<std::endl;
+            std::cout<<projects[0]<<"/150"<<std::endl;
         }
         else{
-            std::cout<<proj2<<std::endl;
+            std::cout<<projects[1]<<"/350"<<std::endl;
         }
     }
 
         //print out final exam grade
     else if (categoryW=="final"){
-        std::cout<<final<<std::endl;
+        std::cout<<final[0]<<"/100"<<std::endl;
     }
 
     else{
@@ -151,24 +162,24 @@ void gradebook::printCatGrade(std::string categoryW) {
     if (categoryW == "assignments"){
         //go through all assignments and print each grade
         for (int i=0; i < assignments.size(); i++){
-            std::cout<<"Assignment " << i << "grade is: " << assignments[i] << "/50" <<std::endl;
+            std::cout<<"Assignment " << i+1 << "grade is: " << assignments[i] << "/50" <<std::endl;
         }
     }
 
     else if (categoryW == "labs") {
         //go through all labs and print each grade
-        for (int i = 0; i < labs.size(); i++) {std::cout<<"Lab "<< i << "grade is: " << labs[i] << "/25" <<std::endl;
+        for (int i = 0; i < labs.size(); i++) {std::cout<<"Lab "<< i+1 << "grade is: " << labs[i] << "/25" <<std::endl;
         }
     }
 
     else if (categoryW =="projects"){
         //print project 1 and 2 grade
-        std::cout<<"Project 1 grade is: " << proj1 << "/150" << "\nProject 2 grade is: "<< proj2 << "/350" <<std::endl;
+        std::cout<<"Project 1 grade is: " << projects[0] << "/150" << "\nProject 2 grade is: "<< projects[1] << "/350" <<std::endl;
     }
 
     else if (categoryW == "final"){
         //print final exam grade
-        std::cout<<"Final Exam grade is: "<<final<< "/100" <<std::endl;
+        std::cout<<"Final Exam grade is: "<<final[0]<< "/100" <<std::endl;
     }
 
     else{
@@ -181,50 +192,52 @@ void gradebook::getTotCategoryGrade(std::string categoryW) {
 
     float total1=0;
     float total2=0;
-    std::string str;
 
     //find assignment grade
     if (categoryW == "assignments"){
         for (int i=0;i<4;i++) {
 
-            //create temp string to convert into float
-            str=(assignments[i]);
-
             //if grade not empty, add it to calculation
-            if (str!="E") {
-                total1 += std::stoi(str);
+            if (assignments[i]!="E") {
+                total1 += std::stof(assignments[i]);
             }
             else{
                 continue;
             }
         }
         //print total assignment grade
-        std::cout<< total1<<std::endl;
+        std::cout<< total1<<"/200"<<std::endl;
     }
         //find lab grade
     else if (categoryW == "labs"){
         for (int i=0;i<8;i++) {
-            //create temp string to convert into float
-            str=(labs[i]);
 
             //if grade not empty, add it to calculation
-            if (str!="E") {
-                total2 += std::stoi(str);
+            if (labs[i]!="E") {
+                total2 += std::stof(labs[i]);
             }
             else{
                 continue;
             }
         }
         //prints total lab grade
-        std::cout<< total2<<std::endl;
+        std::cout<< total2<<"/200"<<std::endl;
     }
         //print projects grade
     else if (categoryW == "projects"){
-        std::cout<<proj1+proj2<<"/500"<<std::endl;
+        float proj_tot;
+        for (int i = 0; i < projects.size(); i++)
+        {
+            if (projects[i]!="E")
+            {
+                proj_tot+=std::stof(projects[i]);
+            }
+        }
+        std::cout<<proj_tot<<"/500"<<std::endl;
     }
         //print final exam grade
     else if (categoryW == "final"){
-        std::cout<<final<<std::endl;
+        std::cout<<final[0]<<"/100"<<std::endl;
     }
     else{
         std::cout<<"Not a valid category"<<std::endl;
@@ -245,18 +258,16 @@ void gradebook::changeGrade(std::string categoryW, int num, std::string newGrade
     }
     else if (categoryW == "projects"){
         if (num==1){
-            grade=std::stoi(newGrade);
-            proj1=grade;
+            projects[0]=newGrade;
         }
         else{
-            grade=std::stoi(newGrade);
-            proj2=grade;
+            projects[1]=newGrade;
         }
     }
     else if (categoryW == "final"){
-        grade=std::stoi(newGrade);
-        final=grade;
+        final[0]=newGrade;
     }
     else{
         std::cout<<"Not a valid category"<<std::endl;
     }
+}
