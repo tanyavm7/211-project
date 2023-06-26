@@ -1,25 +1,24 @@
+#ifndef INC_212_GRADEBOOK_GRADEBOOK_H
+#define INC_212_GRADEBOOK_GRADEBOOK_H
+
 #include <vector>
 #include <iostream>
 #include <iomanip>
-
-#ifndef GRADEBOOKPROJECT_GRADEBOOK_H
-#define GRADEBOOKPROJECT_GRADEBOOK_H
-
 
 class gradebook {
 private:
     std::vector<std::string> assignments;
     std::vector<std::string> labs;
-    float proj1;
-    float proj2;
-    float final;
+    std::vector<std::string> projects;
+    std::vector<std::string> final;
+
 
 public:
     gradebook();
     //functions here
     void infile(std::string fname);
     void outfile(std::string fname);
-    float TotalGrade();
+    void TotalGrade();
     void printGrade(int num,std::string category);
     void getTotCategoryGrade(std::string category);
     void changeGrade(std::string categoryW, int num, std::string newGrade);
@@ -28,4 +27,4 @@ public:
 };
 
 
-#endif //GRADEBOOKPROJECT_GRADEBOOK_H
+#endif //INC_212_GRADEBOOK_GRADEBOOK_H
