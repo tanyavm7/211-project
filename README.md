@@ -11,6 +11,32 @@
 ## Compilation Instructions
 
 ### Input File Template
+```
+You can input any grades  file_name.txt
+Assignments
+E
+E
+E
+E
+Labs
+E
+E
+E
+E
+E
+E
+E
+E
+Projects
+E
+E
+Final
+E
+
+
+```
+
+```
 
 ## Runtime Instructions
 
