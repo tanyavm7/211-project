@@ -85,6 +85,7 @@ void gradebook::outfile(std::string fname){
     else std::cout << "Unable to open file";
 }
 
+
 //function that calculates and returns the final total grade of the course
 void gradebook::TotalGrade() {
     float totalgrade=0;
@@ -249,7 +250,7 @@ void gradebook::getTotCategoryGrade(std::string categoryW) {
     }
         //print projects grade
     else if (categoryW == "projects"){
-        float proj_tot;
+        float proj_tot=0;
         for (int i = 0; i < projects.size(); i++)
         {
             if (projects[i]!="E")
@@ -270,7 +271,6 @@ void gradebook::getTotCategoryGrade(std::string categoryW) {
 
 //change a grade within the gradebook
 void gradebook::changeGrade(std::string categoryW, int num, std::string newGrade) {
-    int grade;
 
     if (categoryW == "assignments"){
         //num-1 to get correct index
