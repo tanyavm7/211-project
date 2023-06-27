@@ -109,9 +109,25 @@ the following block contains some pseudo code that explains what is happening wh
 ```
 
 ## Sample Inputs & Outputs
+The picture below is an example of a starting .txt file, the g++ compilation in the command line, and what the gradebook outputs:
 <img width="799" alt="Screen Shot 2023-06-26 at 7 45 26 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/c43a3b90-c772-489f-a089-a6877a126a82">
 
-the picture above is an example of a starting .txt file, the g++ compilation lines in the command line, and what the gradebook outputs
+The next picture shows what happens when you input 1:
+<img width="756" alt="Screen Shot 2023-06-26 at 7 49 55 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/af44595a-887d-4c00-a05e-d7f5e0a676e7">
+you'll notice immediatly after providing you with the desired information the program prompts you with the same questions again! This will keep happening untill you enter the number 7 terminate the program (shown in the image below):
+<img width="518" alt="Screen Shot 2023-06-26 at 7 51 36 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/74159f25-e2f2-4e64-9bab-5cf41d19232c">
+
+This next example demonstrates an option that takes in a few different inputs to give you the answer you're looking for:
+<img width="772" alt="Screen Shot 2023-06-26 at 7 53 12 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/ced87098-87d2-47c3-8ed8-4d8841230d6f">
+
+Lastly we want to show how to make direct changes to your text file in the program. we will change the E place holder in lab 6 to a 25, and we will go back and edit the assignment 1 grade (to show if you make a mistake, it can always be corrected).
+an important thing to note is that once you finish running the input 4 command, to see these changes you need to then hit 7 to end the program.
+<img width="1286" alt="Screen Shot 2023-06-26 at 7 58 59 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/e2cab6c5-af50-433f-b7ee-7ed2173e3a6e">
+after running these commands your text file will look like this:
+<img width="222" alt="Screen Shot 2023-06-26 at 7 59 52 PM" src="https://github.com/tanyavm7/211-project/assets/98431552/a35d4502-226b-40da-85ad-47e0006d08ee">
+
+
+
 
 ### Credits:
 **Project created by Tanya Li, Sean Reth, and Alexandria Sampalis.** <br />
