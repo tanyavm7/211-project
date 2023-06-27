@@ -99,7 +99,7 @@ you will then be given the option to input a number and depending on which optio
 ### Video
 If you need any more help with compilation or running the program visit the link to a video showcasing our code!
 ```
-(youtube link here)
+[youtube link!](https://youtu.be/iddFjZCMeME)
 ```
 
 
