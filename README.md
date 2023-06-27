@@ -104,7 +104,7 @@ If you need any more help with compilation or running the program visit the link
 
 
 ## Planning
-### Pseudocode 
+### Pseudocode / Flowchart
 the following block contains some pseudo code that explains what is happening when the `main.cpp` is run
 ```
 (pseudo code here)
@@ -132,5 +132,11 @@ after running these commands your text file will look like this:
 
 
 ### Credits:
-**Project created by Tanya Li, Sean Reth, and Alexandria Sampalis.** <br />
+**Project created by Tanya Li, Sean Reth, and Alexandria Sampalis.**
+Tanya Primarily worked on the main.cpp
+Sean worked primarily on writing funcitons in the gradebook.cpp file
+Alex worked on writing functions and creating in-file and outfile functions
+<br />
+although thats what we specifically focused on individually, all members worked together on many aspects over zoom calls.
+<br />
 <br />
