@@ -105,9 +105,27 @@ If you need any more help with compilation or running the program visit the link
 
 ## Planning
 ### Pseudocode / Flowchart
-the following block contains some pseudo code that explains what is happening when the `main.cpp` is run
+the following block contains some pseudo code that explains how we went about planning our `main.cpp`
 ```
-(pseudo code here)
+// first we need to create an object 'gradebook' from our class
+//we then need to take in a file name that is entered in our CLA
+    std::string fname = argv[1];
+//read through the text file
+    do this by calling a funciton that opens the file, reads through its content line by line, and stores it into vectors to be used later.
+//we then want to display the options a person has with this grade book
+-->
+std::cout << "If you want to know your current grade in the class, input 1." << std::endl;
+    std::cout << "If you want to find a certain grade in a specific category and assignment, input 2." << std::endl;
+    std::cout << "If you want to know your total grade in a specific category, input 3." << std::endl;
+    std::cout << "If you want to change a grade in your grade book, input 4." << std::endl;
+    std::cout << "If you want to see all your grades in a specific category, input 5." << std::endl;
+    std::cout << "If you want all the grades, input 6." << std::endl;
+    std::cout << "If you finish with the grade book, input 7." << std::endl;
+
+//after this we want to make sure as long as the input !=7 those questions will be asked, answered based on input, and asked again
+
+//we then need to call an outfile function to save any changes made to the official text file
+
 ```
 
 ## Sample Inputs & Outputs
